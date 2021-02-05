@@ -21,8 +21,6 @@ const getTodos = () => {
 
 export const addTodos = (form, e) => dispatch =>{
 
-    //e.preventDefault()
-
     dispatch(addTodoStarted())
 
     axios.post('https://jsonplaceholder.typicode.com/posts',

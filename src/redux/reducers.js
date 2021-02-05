@@ -16,8 +16,6 @@ let todosReducer = (prevState = initialState, action) => {
 
     switch (action.type) {
 
-       /* case 'GET_CURRENT_TODOS':
-            return prevState*/
         case 'GET_CURRENT_TODOS_SUCCESS':
             return({
                 ...prevState,

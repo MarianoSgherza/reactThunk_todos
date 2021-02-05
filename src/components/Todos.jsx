@@ -1,7 +1,6 @@
 import { Checkbox, TextField } from '@material-ui/core';
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-//import { bindActionCreators } from 'redux';
 import getTodos, { addTodos, handleChange } from "../redux/actions";
 import TodoItem from './TodoItem';
 
@@ -20,14 +19,7 @@ class Todos extends Component {
         }
 
     }
-    /*handleChange = (evt) => {
-        
-        this.setState(
-            {[evt.target.name] : evt.target.value}
-        )
-
-    }*/
-
+    
     componentDidMount(){
         this.props.getTodos()
     }
@@ -42,8 +34,7 @@ class Todos extends Component {
 
             <section>
                 <form onSubmit = {this.handleSubmit}>
-                   {/* <label htmlFor="userinput">User Id:</label>
-                    // <input onChange = {this.props.handleChange} type="text" name="userId" id="userinput" value={this.props.form.userId}/>*/}
+                   
                     <TextField label="User Id" onChange = {this.props.handleChange} type="text" name="userId" id="userinput" value={this.props.form.userId}/> 
                     <TextField onChange = {this.props.handleChange} label="Id" type="text" name="id" id="idi" value={this.props.form.id}/>
                     <TextField onChange = {this.props.handleChange} type="text" label = "titulo" name="title" id="title" value={this.props.form.title}/>
@@ -66,15 +57,14 @@ class Todos extends Component {
 
 }
 
-const mapDispatchToProps = /*(dispatch) => */{
-//    return {
+const mapDispatchToProps = {
+
 
         getTodos,
         handleChange,
         addTodos
 
-    }
-///}
+}
 
 const mapStateToProps = (state) => {
     console.log(state.todos);
